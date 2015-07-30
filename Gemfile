@@ -42,6 +42,7 @@ gem 'bcrypt-ruby', '~> 3.1.2'
 gem 'capistrano'
 gem 'capistrano-passenger'
 gem 'capistrano-bundler'
+gem 'capistrano-rails'
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
