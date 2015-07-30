@@ -2,7 +2,6 @@ syntax: glob
 
 # Ignore bundler config.
 .bundle
-Gemfile.lock
 
 # Ignore the default SQLite database.
 config/database.yml

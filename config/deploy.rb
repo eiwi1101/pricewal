@@ -5,7 +5,7 @@ set :application, 'SimpleGallery'
 set :repo_url, 'http://hg.sen.eisertdev.com/SimpleGallery'
 
 # Default branch is :master
-# ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
+set :branch, :tip
 
 # Default deploy_to directory is /var/www/my_app_name
 set :deploy_to, '/webapps/pricew.al'
