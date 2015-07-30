@@ -8,7 +8,7 @@ set :repo_url, 'http://hg.sen.eisertdev.com/SimpleGallery'
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
 
 # Default deploy_to directory is /var/www/my_app_name
-set :deploy_to, '/var/www/my_app_name'
+set :deploy_to, '/webapps/pricew.al'
 
 # Default value for :scm is :git
 set :scm, :hg
