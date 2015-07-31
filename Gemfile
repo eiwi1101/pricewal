@@ -43,6 +43,7 @@ gem 'capistrano'
 gem 'capistrano-passenger'
 gem 'capistrano-bundler'
 gem 'capistrano-rails'
+gem 'capistrano-linked-files'
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
