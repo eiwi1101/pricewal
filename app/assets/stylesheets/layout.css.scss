@@ -1,0 +1,138 @@
+/**
+ * @project PriceWal - An implementation of SimpleSite::Gallery (SimpleGallery)
+ * @client  Charles Price <elemen.royale@gmail.com>
+ *          John Rachwal <john@pricew.al>
+ *
+ */
+
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,800|Open+Sans+Condensed:300);
+
+body, html {
+    min-height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #000;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+
+    color: #FFF;
+    font-family: "Open Sans", sans-serif;
+    font-size: 16px;
+}
+
+// Text Styling
+
+h1, h2 {
+    font-family: "Open Sans Condensed", sans-serif;
+    text-transform: lowercase;
+    font-weight: normal;
+    text-align: right;
+}
+
+h1 {
+    font-size: 36px;
+}
+
+h2 {
+    font-size: 24px;
+    margin-right: -40px;
+    margin-left: -15px;
+    padding-right: 40px;
+    background-color: #FFF;
+    color: #000;
+    
+    &:after {
+        position: absolute;
+        right: -10px;
+        z-index: -1;
+        height: 30px;
+        display: block;
+        border-top: 10px solid #000;
+        border-right: 15px solid transparent;
+        content: "";
+    }
+}
+
+// Anchors
+
+a:link, a:visited, a:active, a:hover {
+    color: #AAA;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #FFF;
+    text-decoration: underline;
+}
+
+// Header Formatting
+
+header {
+    width: 100%;
+
+    div.title-black,
+    div.title-red {
+        position: absolute;
+        padding: 0px;
+        z-index: 10;
+        height: 69px;
+        overflow: hidden;
+
+        span.title-black-text,
+        span.title-red-text {
+            font-weight: 800;
+            text-transform: uppercase;
+            font-size: 96px;
+            line-height: 64px;
+        }
+    }
+
+    div.title-black {
+        color: #FFF;
+        background-color: #700;
+        left: 0;
+        right: 50%;
+        top: 100px;
+        margin-right: -232px;
+        text-align: right;
+
+        span.title-black-text {
+            position: absolute;
+            right: 229px;
+            z-index: 100;
+        }
+    }
+
+    div.title-red {
+        color: #700;
+        background-color: #FFF;
+        left: 50%;
+        right: 0;
+        top: 169px;
+        margin-left: -264px;
+
+        span.title-red-text {
+          z-index: 99;
+          position: absolute;
+          display: inline-block;
+          transform: scale(1.2, 1);
+          left: 284px;
+        }
+    }
+}
+
+// Content Formatting
+
+div#content {
+    background-color: #700;
+    padding: 15px;
+    box-sizing: border-box;
+
+    max-width: 528px;
+    margin: 238px auto 0 auto;
+}

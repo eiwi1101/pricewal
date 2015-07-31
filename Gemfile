@@ -50,3 +50,4 @@ gem 'capistrano-linked-files'
 # gem 'debugger', group: [:development, :test]
 
 gem 'paperclip'
+gem 'haml'
