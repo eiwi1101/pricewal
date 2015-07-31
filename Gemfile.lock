@@ -75,6 +75,7 @@ GEM
     mimemagic (0.3.0)
     minitest (4.7.5)
     multi_json (1.11.2)
+    mysql (2.9.1)
     net-scp (1.2.1)
       net-ssh (>= 2.6.5)
     net-ssh (2.9.2)
@@ -157,6 +158,7 @@ DEPENDENCIES
   coffee-rails (~> 4.0.0)
   jbuilder (~> 1.2)
   jquery-rails
+  mysql
   paperclip
   rails (= 4.0.2)
   sass-rails (~> 4.0.0)
