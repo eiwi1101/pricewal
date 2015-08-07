@@ -51,3 +51,5 @@ gem 'capistrano-linked-files'
 
 gem 'paperclip'
 gem 'haml'
+
+gem 'redcarpet'
