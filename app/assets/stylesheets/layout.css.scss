@@ -16,7 +16,8 @@ $red:   #770000;
 $width: 528px;
 $half:  $width / 2;
 $break: $width * 2;
-$top:   238px;
+$rtop:  168px;
+$top:   237px;
 $l:     32px;
 
 //------------------------------------------------------------------------------
@@ -127,7 +128,7 @@ header {
         background-color: #FFF;
         left: 50%;
         right: 0;
-        top: 169px;
+        top: $rtop;
         margin-left: -$width;
 
         span.title-red-text {
