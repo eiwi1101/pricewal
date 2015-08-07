@@ -2,6 +2,12 @@ SimpleGallery::Application.routes.draw do
 
     root 'static#home'
 
+    # Session Management
+    get    '/login'  => 'sessions#new', as: :session
+    post   '/login'  => 'sessions#create'
+    delete '/login'  => 'sessions#destroy'
+    get    '/logout' => 'sessions#destroy', as: :logout
+
     # Admin Namespace
     namespace :admin do
       root 'static#home'

@@ -1,0 +1,11 @@
+%h1 Log In
+%p Please log in to access administrative controls.
+
+=form_for :session do |f|
+  =f.label :username
+  =f.text_field :username
+
+  =f.label :password
+  =f.text_field :password
+
+  =f.submit 'Log In'

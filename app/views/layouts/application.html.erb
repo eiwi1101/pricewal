@@ -21,6 +21,12 @@
 </header>
 
 <div id="content">
+  <div id="flashes">
+  <% flash.each do |key, val| %>
+    <div class='<%= key %>'><%= val %></div>
+  <% end %>
+  </div>
+  
   <%= yield %>
 </div>
 </body>

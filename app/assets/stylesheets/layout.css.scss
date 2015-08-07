@@ -11,6 +11,9 @@
 $white: #FFFFFF;
 $black: #000000;
 $red:   #770000;
+$dred:  #C30000;
+$lred:  #FFFFFF;
+$green: #007700;
 
 // Sizing
 $width: 528px;
@@ -92,6 +95,20 @@ a:hover {
     text-decoration: underline;
 }
 
+// Some other things
+
+div#flashes {
+  margin: -15px -15px 15px -15px;
+
+  div {
+    padding: 15px;
+    border-bottom: 1px solid $red;
+
+    &.error  { background-color: $dred; }
+    &.notice { background-color: $green; }
+  }
+}
+
 // Header Formatting
 
 header {
@@ -160,6 +177,49 @@ div#content {
 
     position: relative;
     right: $half;
+}
+
+// Forms
+
+form {
+    input, select, textarea, button, label {
+      box-sizing: border-box;
+      font: inherit;
+      display: block;
+      border: none;
+      background-color: $white;
+
+      &.half {
+        width: 55%;
+        min-width: 200px;
+      }
+    }
+
+    input, select, textarea {
+      margin-bottom: 15px;
+      width: 100%;
+      padding: 5px 10px;
+      border: 1px solid $dred;
+      background-color: $lred;
+    }
+
+    textarea {
+      min-height: 150px;
+    }
+    
+    button, input[type=submit] {
+      margin-bottom: 0;
+      background-color: $dred;
+      padding: 10px;
+      color: $white;
+      font-weight: bold;
+    }
+
+    label {
+      padding: 5px 10px;
+      background-color: $dred;
+      color: $white;
+    }
 }
 
 // Responsive

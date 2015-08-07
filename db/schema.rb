@@ -11,12 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150807021228) do
+ActiveRecord::Schema.define(version: 20150807032940) do
 
   create_table "pages", force: true do |t|
     t.string   "title"
     t.string   "slug"
     t.text     "content"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "users", force: true do |t|
+    t.string   "username"
+    t.string   "password_digest"
+    t.string   "email"
+    t.boolean  "notify"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
