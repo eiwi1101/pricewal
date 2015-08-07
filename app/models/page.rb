@@ -3,7 +3,7 @@ class Page < ActiveRecord::Base
     case_sensitive: false
 
   validates_format_of :slug,
-    with:    /[A-Za-z0-9\-]+/,
+    with:    /\A[A-Za-z0-9\-]+\z/,
     message: "can only contain letters, numbers and hyphens (-)"
 
   # Enforce Lowercase Slugs

@@ -1,0 +1,14 @@
+=form_for @user do |f|
+  =elabel f, :username
+  =f.text_field :username, enabled: @user.new_record?
+
+  =elabel f, :email
+  =f.email_field :email
+
+  =elabel f, :password
+  =f.password_field :password
+
+  =elabel f, :password_confirmation, "Password (again)"
+  =f.password_field :password_confirmation
+
+  =f.submit

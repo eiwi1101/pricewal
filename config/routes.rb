@@ -8,6 +8,10 @@ SimpleGallery::Application.routes.draw do
     delete '/login'  => 'sessions#destroy'
     get    '/logout' => 'sessions#destroy', as: :logout
 
+    # Users Management
+    resources :users
+    get    '/register' => 'users#new', as: :register
+
     # Admin Namespace
     namespace :admin do
       root 'static#home'
