@@ -198,6 +198,7 @@ DEPENDENCIES
   capistrano-passenger
   capistrano-rails
   coffee-rails (~> 4.0.0)
+  guard
   guard-livereload
   haml
   jbuilder (~> 1.2)

@@ -57,5 +57,6 @@ gem 'redcarpet'
 ### DEVELOPMENT
 group :development do
   # Live Reload Pages
+  gem 'guard'
   gem 'guard-livereload'
 end
