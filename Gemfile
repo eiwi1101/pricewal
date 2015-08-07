@@ -53,3 +53,9 @@ gem 'paperclip'
 gem 'haml'
 
 gem 'redcarpet'
+
+### DEVELOPMENT
+group :development do
+  # Live Reload Pages
+  gem 'guard-livereload'
+end
