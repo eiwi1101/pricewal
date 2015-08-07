@@ -7,6 +7,20 @@
 
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,800|Open+Sans+Condensed:300);
 
+// Colors
+$white: #FFFFFF;
+$black: #000000;
+$red:   #770000;
+
+// Sizing
+$width: 528px;
+$half:  $width / 2;
+$break: $width * 2;
+$top:   238px;
+$l:     32px;
+
+//------------------------------------------------------------------------------
+
 body, html {
     min-height: 100%;
     margin: 0;
@@ -98,7 +112,7 @@ header {
         left: 0;
         right: 50%;
         top: 100px;
-        margin-right: -232px;
+        margin-right: 32px;
         text-align: right;
 
         span.title-black-text {
@@ -114,7 +128,7 @@ header {
         left: 50%;
         right: 0;
         top: 169px;
-        margin-left: -264px;
+        margin-left: -$width;
 
         span.title-red-text {
           z-index: 99;
@@ -133,6 +147,48 @@ div#content {
     padding: 15px;
     box-sizing: border-box;
 
-    max-width: 528px;
-    margin: 238px auto 0 auto;
+    width: $width;
+    margin: $top auto 0 auto;
+
+    position: relative;
+    right: $half;
+}
+
+// Responsive
+
+@media (max-width: $break) {
+  div#content {
+    margin: $top auto 0 0;
+    width: 100%;
+    max-width: $width;
+    right: auto;
+    left: 0;
+  }
+
+  header {
+    div.title-red {
+      width: 100%;
+      left: 0;
+      margin-left: 0;
+
+      span.title-red-text {
+        @media (max-width: $width) {
+          right: 18px;
+          left: auto;
+        }
+      }
+    }
+
+    div.title-black {
+      left: 0;
+      max-width: $width - $l;
+      right: 0;
+      margin-right: 0;
+
+      span.title-black-text {
+        left: -7px;
+        right: auto;
+      }
+    }
+  }
 }
