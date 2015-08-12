@@ -2,4 +2,11 @@
 Howdy, administrator. I see you want to do some administrating.
 
 %h2 Pages
-=link_to 'New Page', admin_root_path
+%table.lr
+  -Page.all.each do |p|
+    %tr
+      %td=p.title
+      %td=link_to "/#{p.slug}", page_path(p)
+      %td=link_to 'edit', edit_admin_page_path(p)
+
+=link_to 'New Page', new_admin_page_path

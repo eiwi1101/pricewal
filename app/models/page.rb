@@ -10,4 +10,8 @@ class Page < ActiveRecord::Base
   def slug=(value)
     write_attribute(:slug, value.downcase)
   end
+
+  def to_param
+    slug
+  end
 end

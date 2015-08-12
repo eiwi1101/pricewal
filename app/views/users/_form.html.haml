@@ -1,6 +1,6 @@
 =form_for @user do |f|
   =elabel f, :username
-  =f.text_field :username, enabled: @user.new_record?
+  =f.text_field :username, disabled: !@user.new_record?
 
   =elabel f, :email
   =f.email_field :email

@@ -15,6 +15,8 @@ SimpleGallery::Application.routes.draw do
     # Admin Namespace
     namespace :admin do
       root 'static#home'
+
+      resources :pages
     end
 
     # Static Routes

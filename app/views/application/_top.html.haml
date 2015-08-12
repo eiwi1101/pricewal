@@ -1,0 +1,5 @@
+-if !current_page? root_path
+  %div#top
+    %nav
+      -if logged_in?
+        =link_to 'log out', logout_path

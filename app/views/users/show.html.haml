@@ -1,0 +1,16 @@
+%h1=@user.username
+That's it. There's nothing yet to show here.
+
+-if admin?
+  %h2 Administrative Controls
+  =form_for @user do |f|
+    =f.label :username
+    =f.text_field :username
+
+    =f.check_box :admin
+    =f.label :admin
+
+    =f.check_box :notify
+    =f.label :notify
+
+    =f.submit

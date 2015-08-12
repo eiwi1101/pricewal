@@ -33,6 +33,18 @@ class UsersController < ApplicationController
     end
 
     def update
+      @user = if admin?
+        User.find(params[:id])
+      else
+        current_user
+      end
+
+      if @user.assign_attributes(user_params)
+        redirect_to :back,
+          flash: { notice: "All shiny, captain!" }
+      else
+        render 'edit'
+      end
     end
 
     def destroy
@@ -41,7 +53,7 @@ class UsersController < ApplicationController
 private
 
     def find_user
-      @user = User.find(params[:user])
+      @user = User.find(params[:id])
     end
 
     def find_current_user

@@ -58,7 +58,7 @@ h1 {
 
 h2 {
     font-size: 24px;
-    margin-right: -40px;
+    margin-right: -25px;
     margin-left: -15px;
     padding-right: 40px;
     background-color: #FFF;
@@ -81,6 +81,46 @@ hr {
   border: none;
   color: #FFF;
   background-color: #FFF;
+}
+
+// Tables
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+
+  &.lr td:last-child {
+    text-align: right;
+  }
+}
+
+// Top Menu
+
+div#top {
+  background-color: $red;
+  padding: 5px 15px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  font-size: smaller;
+
+  nav {
+    float: right;
+    margin: -5px -15px;
+  
+    a {
+      display: block;
+      padding: 5px 10px;
+      text-transform: lowercase;
+      color: $white;
+
+      &:hover {
+        text-decoration: none;
+        background-color: $dred;
+      }
+    }
+  }
 }
 
 // Anchors
@@ -193,6 +233,12 @@ form {
         width: 55%;
         min-width: 200px;
       }
+
+      &:disabled {
+        color: #333;
+        background-color: #CCC;
+        cursor: not-allowed;
+      }
     }
 
     input, select, textarea {
@@ -219,6 +265,17 @@ form {
       padding: 5px 10px;
       background-color: $dred;
       color: $white;
+    }
+
+    input[type=checkbox] {
+      float: left;
+      width: auto;
+      margin: 10px;
+    }
+
+    input[type=checkbox]~label {
+      margin-bottom: 15px;
+      padding-left: 20px;
     }
 }
 
