@@ -47,12 +47,12 @@ $(document).keydown(function(key) {
     if(xyzzy == 11) {
         xyzzy = 0;
         $(".title-red").css({'background-color':'#000'});
-        $(".title-black").css({'background-color':'#FE0'});
+        $(".title-black").css({'background-color':'#FE0', 'margin-right': '0'});
         $("#content").css({'background-color':'#FE0'});
-        $(".title-black-text").css({'color':'#000', 'padding-left':'5px'});
-        $(".title-red-text").css({'color':'#FE0', 'background':'#000'});
+        $(".title-black-text").css({'color':'#000', 'padding-left':'5px', 'right': '185px'}).text('Watch');
+        $(".title-red-text").css({'color':'#FE0', 'background':'#000', 'left': '289px'}).text('Men');
         $(".red").css({'color':'#FE0'});
-        $("body").css({'color':'#000'});
+        $("body").css({'color':'#000', 'background-image': 'url(\'/assets/Watchmen.jpg\')'});
         $("button").css({'color':'#000'});
         $("#snowman").html("&#x2601;");
         $("nav.home ul li").css({'background-color':'#FE0'});
