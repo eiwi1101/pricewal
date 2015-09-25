@@ -60,3 +60,5 @@ group :development do
   gem 'guard'
   gem 'guard-livereload'
 end
+
+gem 'mdmagick-rails'

@@ -1,0 +1,13 @@
+=form_for @page do |f|
+  =f.label :title
+  =f.text_field :title
+
+  =f.label :content
+  =f.text_area :content, class: 'mdm-input'
+
+  %h2 Other Options
+
+  =f.label :slug
+  =f.text_field :slug
+
+  =f.submit

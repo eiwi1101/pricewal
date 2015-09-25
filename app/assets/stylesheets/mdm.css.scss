@@ -1,0 +1,40 @@
+form {
+
+  input, textarea, select {
+    outline: none;
+  }
+
+  div.mdm-buttons {
+    width: 100%;
+    background-color: #CCCCCC;
+    border: 1px solid #C30000;
+    border-bottom: none;
+    color: #FFF;
+
+    ul {
+      padding-left: 0;
+    }
+  }
+
+  div.mdm-preview.focus {
+    margin: 0px -15px 15px -15px;
+    width: 528px !important;
+    max-width: 528px !important;
+    top: 0;
+    background-color: #700;
+    font-size: inherit !important;
+    padding: 15px !important;
+    line-height: inherit;
+    overflow: visible;
+    border-top: 1px solid #FFF;
+    border-bottom: 1px solid #FFF;
+
+    h1 { font-size: 36px; font-weight: normal; }
+    h2 { font-size: 24px; font-weight: normal; }
+    
+  }
+
+  div.mdm-preview.blur {
+    display: none;
+  }
+}
