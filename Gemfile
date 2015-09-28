@@ -62,3 +62,4 @@ group :development do
 end
 
 gem 'mdmagick-rails'
+gem 'font-awesome-sass'

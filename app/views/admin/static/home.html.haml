@@ -3,6 +3,10 @@ Howdy, administrator. I see you want to do some administrating.
 
 %h2 Pages
 %table.lr
+  %tr
+    %th Page Title
+    %th URL Slug
+    %th
   -Page.all.each do |p|
     %tr
       %td=p.title

@@ -1,0 +1,350 @@
+/**
+ * @project Eisert Development Customer Portal
+ */
+
+@import 'variables';
+@import "font-awesome-sprockets";
+@import "font-awesome";
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800|Open+Sans+Condensed:300);
+
+// Geometry Variables
+$space-mobile:  15px;
+$break:         768px;
+$space-desktop: 0px;
+$column-width:  200px;
+$padding-main:  15px;
+$padding-side:  0;
+$padding-head:  0;
+$padding-foot:  15px;
+
+// Colour Variables
+$background-header:  #DDDDDD;
+$foreground-header:  $dtext-color;
+$background-nav:     $accent-light;
+$foreground-nav:     $text-color;
+$background-content: #FFFFFF;
+$foreground-content: $text-color;
+$background-aside:   #EEEEEE;
+$foreground-aside:   $text-dim;
+$background-footer:  #DDDDDD;
+$foreground-footer:  #666666;
+
+//------------------------------------------------------------------------------
+
+html, body {
+  height: 100%;
+  min-height: 100%;
+  margin: 0;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+}
+
+h1, h2 {
+  font-family: "Open Sans Condensed", sans-serif;
+  font-weight: normal;
+}
+
+html.panel-open {
+  overflow: hidden;
+}
+
+div#menu-overlay {
+  position: absolute;
+  left: $column-width;
+
+}
+
+a:link,
+a:active,
+a:visited {
+  text-decoration: none;
+  color: #700;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+header {
+  height: 24px;
+  border-bottom: 1px solid #AAA;
+  padding: 10px;
+
+  div.logo {
+    color: #FFF;
+    font-size: 36px;
+    font-weight: 800;
+    text-transform: uppercase;
+    color: #700;
+    display: inline-block;
+    overflow: hiddne;
+    height: 36px;
+    margin-top: -12px;
+
+    span.wide {
+      transform: scale(1.2, 1);
+      color: #000;
+      margin-left: -2px;
+      padding-left: 3px;
+    }
+  }
+
+  div.nav {
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    font-size: smaller;
+    text-transform: uppercase;
+
+    a {
+      display: block;
+      padding: 13px 10px;
+      color: #333;
+
+      &:hover {
+        background-color: #CCC;
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+body.holygrail {
+  display: flex;
+  flex-direction: column;
+
+  &.panel-open {
+    height: 100%;
+    margin-right: -$column-width;
+    margin-left:  $column-width;
+  }
+
+  header {
+    flex: none;
+    background: $background-header;
+    color:      $foreground-header;
+    position: relative;
+  }
+
+  footer {
+    background: $background-footer;
+    color:      $foreground-footer;
+    padding:    $padding-foot;
+    font-size:  smaller;
+    text-align: center;
+    border-top: 1px solid #AAA;
+
+    p {
+      margin: 0;
+    }
+  }
+
+  div.holygrail-body {
+    display: flex;
+    flex: 1 0 auto;
+    flex-direction: column;
+    padding: $space-mobile;
+
+    nav {
+      box-sizing: border-box;
+      padding:    $padding-side;
+      background: $background-nav;
+      color:      $foreground-nav;
+      position:   absolute;
+      left:       0;
+      top:        0;
+      bottom:     0;
+      width:      $column-width;
+      display:    none;
+      border-right: 1px solid #AAA;
+
+      &.panel-open {
+        display: block;
+      }
+
+      a.user {
+        text-decoration: none;
+
+        div.user {
+          background-color: #DDD;
+          padding: 10px;
+          font-size: smaller;
+          min-height: 40px;
+
+          &:hover {
+            background-color: #CCC;
+          }
+
+          div.username {
+            font-weight: bold;
+            color: #000;
+          }
+
+          div.userrank {
+            padding-top: 2px;
+            color: #666;
+          }
+
+          img {
+            max-width: 40px;
+            max-height: 40px;
+            float: left;
+            margin-right: 10px;
+          }
+        }
+      }
+
+      ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        position: relative;
+    
+
+        li {
+          margin: 0;
+          padding: 0;
+
+          a {
+            display: block;
+            width: 100%;
+            padding: 5px 10px;
+            color: #111;
+            text-decoration: none;
+            box-sizing: border-box;
+            font-size: smaller;
+            cursor: pointer;
+
+            &:hover {
+              background-color: #CCC;
+            }
+
+            &.active {
+              font-weight: bold;
+            }
+          }
+
+          i.fa {
+            color: #777;
+            margin-right: 5px;
+
+            &.collapse-icon {
+              position: absolute;
+              right: 10px;
+              margin-top: 5px;
+              text-align: right;
+              margin-right: 0;
+              color: #999;
+              font-size: smaller;
+            }
+          }
+
+          ul {
+            margin-left: 35px;
+            font-size: smaller;
+            margin-bottom: 10px;
+            display: none;
+
+            li {
+              font-weight: normal;
+            }
+          }
+        }
+      }
+    }
+
+    main {
+      padding:    0;
+      margin-top: $space-mobile;
+      background: $background-content;
+      color:      $foreground-content;
+      max-width: 660px;
+
+      h1 {
+        margin-top: 0;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        border: 1px solid #AAA;
+
+        th {
+          border-bottom: 1px #AAA;
+          background: linear-gradient(to bottom, #FFF, #EEE);
+          padding: 5px;
+          font-weight: 600;
+          color: #333;
+        }
+
+        td {
+          padding: 3px 5px;
+          border-right: 1px solid #DDD;
+
+          &:last-child {
+            border-right: none;
+          }
+        }
+
+        tr {
+          border-bottom: 1px solid #CCC;
+
+          &:last-child {
+            border-bottom: none;
+          }
+        }
+      }
+    }
+
+    aside {
+      padding:    $padding-side;
+      background: $background-aside;
+      color:      $foreground-aside;
+    }
+  }
+}
+
+@media (min-width: $break) {
+  body.holygrail {
+    div.holygrail-body {
+      flex-direction: row;
+      padding: $space-desktop;
+
+      main {
+        flex: 1;
+        padding: $padding-main;
+        margin: 0;
+      }
+
+      nav {
+        flex: 0 0 $column-width;
+        position: static;
+        display: block;
+      }
+
+      aside {
+        flex: 0 0 $column-width;
+      }
+    }
+  }
+
+  html.panel-open {
+    overflow: visible;
+  }
+
+  body.panel-open {
+    margin: 0!important;
+  }
+
+  nav.panel-open {
+    display: block;
+  }
+
+  .mobile-only {
+    display: none;
+  }
+}
+

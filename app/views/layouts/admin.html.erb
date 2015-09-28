@@ -6,23 +6,31 @@
   <meta name='description' content='PriceWal is an artist collaboration between Charles Price and John Rachwal, based in Minneapolis, MN.' />
   <meta name='viewport' content='width=device-width, minimum-scale=1.0, maximum-scale=1.0' />
   <meta name="google-site-verification" content="JDOOg3ZDhtCemlFq6o0fu5Kui32bIN3CNKpiD23NQ_4" />
-  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= stylesheet_link_tag    "admin", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "admin", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
-<body style='background-image: url("<%= image_path "TheEyeOfGod_BG.jpg" %>");'>
 
-<%= render 'top' %>
+<body class='holygrail'>
 
-<header>
-  <div class='title-black'>
-    <span class='title-black-text'>Price</span>
+  <header>
+    <div class='logo'>Price<span class='wide'>Wal</span></div>
+    <div class="nav">
+      <%= link_to 'Go To Site', root_path %>
+    </div>
+  </header>
+
+  <div class='holygrail-body'>
+    <%= render 'nav' %>
+
+    <main>
+      <%= render 'content' %>
+    </main>
   </div>
-  <div class='title-red'>
-    <span class='title-red-text'>Wal</span>
-  </span>
-</header>
 
-<%= render 'content' %>
+  <footer>
+    <p>Eisert Development</p>
+  </footer>
+
 </body>
 </html>
