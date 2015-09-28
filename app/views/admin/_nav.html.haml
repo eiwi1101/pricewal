@@ -1,9 +1,9 @@
 %nav
   %a.user{href: '#'}
     %div.user
-      %img{src: 'https://pbs.twimg.com/profile_images/624760480037351424/Kolw_W6X_bigger.jpg'}/
-      %div.username William Eisert
-      %div.userrank Administrator
+      %img{src: current_user.avatar.url}/
+      %div.username=current_user.username
+      %div.userrank=current_user.admin? ? "Administrator" : "User"
 
   %ul.accordion-nav
     %li
