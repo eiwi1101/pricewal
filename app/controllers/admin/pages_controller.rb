@@ -15,9 +15,21 @@ class PagesController < AdminController
   end
 
   def create
+    @page = Page.new(page_params)
+    
+    if @page.save
+      redirect_to admin_pages_path, flash: { notice: "Page created successfully." }
+    else
+      render 'new'
+    end
   end
 
   def update
+    if @page.update_attributes(page_params)
+      redirect_to admin_pages_path, flash: { notice: "Page created successfully." }
+    else
+      render 'edit'
+    end
   end
 
   def destroy
@@ -27,7 +39,10 @@ private
 
   def get_page
     @page = Page.find_by(slug: params[:id])
+  end
 
+  def page_params
+    params.require(:page).permit(:title, :slug, :content)
   end
 
 end

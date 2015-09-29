@@ -208,6 +208,12 @@ body.holygrail {
           margin: 0;
           padding: 0;
 
+          &.active {
+            ul {
+              display: block;
+            }
+          }
+
           a {
             display: block;
             width: 100%;
@@ -270,12 +276,12 @@ body.holygrail {
       table {
         width: 100%;
         border-collapse: collapse;
-        border: 1px solid #AAA;
+        border: 1px solid #CCC;
 
         th {
-          border-bottom: 1px #AAA;
-          background: linear-gradient(to bottom, #FFF, #EEE);
-          padding: 5px;
+          border-bottom: 1px solid #CCC;
+          background: linear-gradient(to bottom, #EEE, #DDD);
+          padding: 3px 5px;
           font-weight: 600;
           color: #333;
         }
@@ -290,7 +296,7 @@ body.holygrail {
         }
 
         tr {
-          border-bottom: 1px solid #CCC;
+          border-bottom: 1px solid #DDD;
 
           &:last-child {
             border-bottom: none;
@@ -304,6 +310,40 @@ body.holygrail {
       background: $background-aside;
       color:      $foreground-aside;
     }
+  }
+}
+
+form {
+  width: 100%;
+
+  input, textarea, select, button {
+    font: inherit;
+    box-sizing: border-box;
+    width: 100%;
+    display: block;
+    padding: 3px 5px;
+    margin-bottom: 10px;
+    border: 1px solid #CCC;
+    border-top: none;
+  }
+
+  input[type=submit], button {
+    border: 1px solid #CCC;
+    background: linear-gradient(to bottom, #EEE, #DDD);
+  }
+
+  textarea {
+    min-height: 160px;
+  }
+
+  label {
+    display: block;
+    width: 100%;
+    padding: 3px 5px;
+    background-color: #EEE;
+    box-sizing: border-box;
+    border: 1px solid #CCC;
+    border-bottom: none;
   }
 }
 

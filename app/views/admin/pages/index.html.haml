@@ -1,0 +1,23 @@
+%h1 All Pages
+%p
+  Manage custom static pages here. These pages will be available to the public,
+  and can contain useful information, including contact information and frequently
+  requested data.
+
+%table
+  %tr
+    %th Page Title
+    %th URL Slug
+    %th{align: 'right'}
+      =link_to new_admin_page_path do
+        %i.fa.fa-plus
+
+  -Page.all.each do |p|
+    %tr
+      %td=p.title
+      %td=link_to '/' + p.slug, '/' + p.slug
+      %td{align: 'right'}
+        =link_to edit_admin_page_path(p) do
+          %i.fa.fa-pencil
+        =link_to admin_page_path(p), method: :delete, confirm: "Really delete this page?" do
+          %i.fa.fa-trash

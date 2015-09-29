@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(document).on("ready page:load", function() {
   if($('ul.accordion-nav')) {
     
     // Add Accordion Feature

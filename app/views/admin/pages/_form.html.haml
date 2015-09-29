@@ -1,9 +1,9 @@
-=form_for @page do |f|
+=form_for [:admin, @page] do |f|
   =f.label :title
   =f.text_field :title
 
   =f.label :content
-  =f.text_area :content, class: 'mdm-input'
+  =f.text_area :content
 
   %h2 Other Options
 
