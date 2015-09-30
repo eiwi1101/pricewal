@@ -1,0 +1,11 @@
+=form_for [:admin, @setting] do |f|
+  =f_label f, :group
+  =f.text_field :group, value: params.include?(:group) ? params[:group] : @setting.group
+
+  =f_label f, :type
+  =f.select :type, options_for_select(["String", "Boolean", "Password", "Number"])
+
+  =f_label f, :key
+  =f.text_field :key
+
+  =f.submit

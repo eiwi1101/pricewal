@@ -267,7 +267,24 @@ body.holygrail {
       margin-top: $space-mobile;
       background: $background-content;
       color:      $foreground-content;
-      max-width: 660px;
+
+      div#content {
+        max-width: 660px;
+      }
+
+      div#flashes {
+        margin: -15px;
+        margin-bottom: 15px;
+        font-size: smaller;
+        
+        div {
+          padding: 10px 15px;
+          border-bottom: 1px solid #AAA;
+        }
+
+        div.error  { background-color: #FEE; border-color: #CAA; color: #700; }
+        div.notice { background-color: #EFE; border-color: #ACA; color: #070; }
+      }
 
       h1 {
         margin-top: 0;
@@ -293,6 +310,25 @@ body.holygrail {
           &:last-child {
             border-right: none;
           }
+
+          &.inline-form {
+            padding: 0;
+            width: 400px;
+            
+            input {
+              border: none;
+              width: 350px;
+              display: inline-block;
+              margin: 0;
+              float: left;
+            }
+
+            input[type=submit], button {
+              width: 50px;
+              border-left: 1px solid #CCC;
+              color: #333;
+            }
+          }
         }
 
         tr {
@@ -315,6 +351,23 @@ body.holygrail {
 
 form {
   width: 100%;
+
+  div.field_with_errors {
+    label {
+      background-color: #FEE;
+      border-color: #CAA;
+      color: #700;
+
+      span.label-error {
+        font-size: smaller;
+      }
+    }
+
+    input, textarea, select {
+      border-color: #CAA;
+    }
+  }
+
 
   input, textarea, select, button {
     font: inherit;

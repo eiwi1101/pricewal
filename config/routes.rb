@@ -17,6 +17,7 @@ SimpleGallery::Application.routes.draw do
       root 'static#home'
 
       resources :pages
+      resources :settings
     end
 
     # Static Routes

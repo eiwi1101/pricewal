@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150928224645) do
+ActiveRecord::Schema.define(version: 20150929231007) do
 
   create_table "pages", force: true do |t|
     t.string   "title"
@@ -19,6 +19,13 @@ ActiveRecord::Schema.define(version: 20150928224645) do
     t.text     "content"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "settings", force: true do |t|
+    t.string "key"
+    t.text   "value"
+    t.string "type"
+    t.string "group"
   end
 
   create_table "users", force: true do |t|

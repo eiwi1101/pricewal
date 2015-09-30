@@ -9,3 +9,9 @@
     -nav_menu 'Pages', 'file-text-o', 'admin/pages' do
       -nav_to 'All Pages', admin_pages_path
       -nav_to 'New Page', new_admin_page_path
+
+    -nav_menu 'Settings', 'cogs', 'admin/settings' do
+      -nav_to 'All Settings', admin_settings_path
+      -Setting.by_group.each do |g, s|
+        -nav_to g, admin_settings_path(group: g)
+      -nav_to 'New Setting', new_admin_setting_path

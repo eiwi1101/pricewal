@@ -1,0 +1,15 @@
+-title "Settings"
+%h1 Settings
+
+%table
+  -Setting.by_group.each do |g, s|
+    %tr
+      %th{align: 'left', colspan: 2}=g
+    -s.each do |setting|
+      %tr
+        %td=setting.human_key
+        %td.inline-form
+          =form_for [:admin, setting] do |f|
+            =f.hidden_field :key, value: setting.key
+            =f.text_field :value, value: setting.human_value
+            =f.submit 'Save'
