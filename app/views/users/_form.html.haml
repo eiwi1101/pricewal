@@ -1,14 +1,14 @@
-=form_for @user do |f|
-  =elabel f, :username
+form_for @user do |f|
+  =f_label f, :username
   =f.text_field :username, disabled: !@user.new_record?
 
-  =elabel f, :email
+  =f_label f, :email
   =f.email_field :email
 
-  =elabel f, :password
+  =f_label f, :password
   =f.password_field :password
 
-  =elabel f, :password_confirmation, "Password (again)"
+  =f_label f, :password_confirmation, "Password (again)"
   =f.password_field :password_confirmation
 
   =f.submit
