@@ -380,9 +380,25 @@ form {
     border-top: none;
   }
 
+  input[type=checkbox],
+  input[type=radio] {
+    width: 20px;
+    height: 20px;
+    float: left;
+    margin: 5px;
+  }
+
+  input[type=checkbox] ~ label,
+  input[type=radio] ~ label{
+    margin-bottom: 10px;
+    border: none;
+    background-color: transparent;
+  }
+
   input[type=submit], button {
     border: 1px solid #CCC;
     background: linear-gradient(to bottom, #EEE, #DDD);
+    margin-top: 30px;
   }
 
   textarea {

@@ -1,0 +1,35 @@
+=form_for [:admin, @user], html: { multipart: true } do |f|
+  -if !@user.id.nil? and @user != current_user
+    You can't edit other users.
+  -else
+    =f_label f, :username
+    =f.text_field :username
+
+    =f_label f, :email
+    =f.text_field :email
+
+    =f_label f, :avatar
+    =f.file_field :avatar
+
+    %h2 Change Password
+
+    =f_label f, :password
+    =f.password_field :password
+
+    =f_label f, :password_confirmation
+    =f.password_field :password_confirmation
+
+    %h2 Notification Preferences
+
+    =f.check_box :notify
+    =f.label :notify, 'Notify me about contact requests.'
+
+  %h2 Administrative Settings
+
+  -if @user.id == 1
+    %p You can not remove admin rights from the Superuser.
+  -else
+    =f.check_box :admin
+    =f.label :admin
+
+  =f.submit

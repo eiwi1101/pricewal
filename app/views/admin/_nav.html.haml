@@ -1,7 +1,7 @@
 %nav
   =link_to admin_root_path, class: 'user' do
     %div.user
-      %img{src: current_user.avatar.url}/
+      %img{src: current_user.avatar.url(:thumb)}/
       %div.username=current_user.username
       %div.userrank=current_user.admin? ? "Administrator" : "User"
 
@@ -9,6 +9,15 @@
     -nav_menu 'Pages', 'file-text-o', 'admin/pages' do
       -nav_to 'All Pages', admin_pages_path
       -nav_to 'New Page', new_admin_page_path
+
+    -nav_menu 'Galleries', 'image', 'admin/galleries' do
+      -nav_to 'All Galleries', admin_galleries_path
+      -nav_to 'New Gallery', new_admin_gallery_path
+    
+    -nav_menu 'Users', 'users', 'admin/users' do
+      -nav_to 'All Users', admin_users_path
+      -nav_to 'Account Settings', edit_admin_user_path(current_user)
+      -nav_to 'New User', new_admin_user_path
 
     -nav_menu 'Settings', 'cogs', 'admin/settings' do
       -nav_to 'All Settings', admin_settings_path

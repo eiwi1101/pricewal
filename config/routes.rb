@@ -18,6 +18,9 @@ SimpleGallery::Application.routes.draw do
 
       resources :pages
       resources :settings
+      resources :galleries
+      resources :images
+      resources :users
     end
 
     # Static Routes
