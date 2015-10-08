@@ -5,6 +5,6 @@
 
 -@galleries.each do |g|
   =link_to [:admin, g] do
-    %div.gallery{style: "background-image: url('#{image_path('TheEyeOfGod_BG.jpg')}');"}
-      %div.count 32 Images
+    %div.gallery{style: "background-image: url('#{g.cover.path(:medium)}');"}
+      %div.count #{g.images.count} Images
       %div.name=g.name
