@@ -100,7 +100,7 @@ header {
     text-transform: uppercase;
 
     a {
-      display: block;
+      display: inline-block;
       padding: 13px 10px;
       color: #333;
 
@@ -267,14 +267,31 @@ body.holygrail {
       margin-top: $space-mobile;
       background: $background-content;
       color:      $foreground-content;
+      position:   relative;
+
+      div#toolbar {
+        background-color: #EEE;
+        font-size: smaller;
+
+        a {
+          display: inline-block;
+          padding: 7px 10px;
+          color: #666;
+
+          &:hover {
+            text-decoration: none;
+            color: #333;
+            background-color: #DDD;
+          }
+        }
+      }
 
       div#content {
         max-width: 660px;
+        padding: 15px;
       }
 
       div#flashes {
-        margin: -15px;
-        margin-bottom: 15px;
         font-size: smaller;
         
         div {
@@ -424,7 +441,7 @@ form {
 
       main {
         flex: 1;
-        padding: $padding-main;
+        padding: 0;
         margin: 0;
       }
 

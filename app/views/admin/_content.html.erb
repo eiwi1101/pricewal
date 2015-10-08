@@ -3,6 +3,12 @@
   <div class='<%= key %>'><%= val %></div>
 <% end %>
 </div>
+
+<%- if content_for? :toolbar %>
+<div id="toolbar">
+  <%= content_for :toolbar %>
+</div>
+<% end %>
   
 <div id="content">
   <%= yield %>

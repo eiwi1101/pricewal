@@ -12,6 +12,8 @@
 
     -nav_menu 'Galleries', 'image', 'admin/galleries' do
       -nav_to 'All Galleries', admin_galleries_path
+      -Gallery.all.each do |g|
+        -nav_to g.name, admin_gallery_path(g)
       -nav_to 'New Gallery', new_admin_gallery_path
     
     -nav_menu 'Users', 'users', 'admin/users' do

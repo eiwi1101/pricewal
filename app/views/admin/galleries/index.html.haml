@@ -1,0 +1,7 @@
+%h1 All Galleries
+
+-@galleries.each do |g|
+  =link_to [:admin, g] do
+    %div.gallery{style: "background-image: url('#{image_path('TheEyeOfGod_BG.jpg')}');"}
+      %div.count 32 Images
+      %div.name=g.name
