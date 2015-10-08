@@ -1,4 +1,7 @@
-%h1 All Galleries
+-content_for :toolbar do
+  =link_to new_admin_gallery_path do
+    %i.fa.fa-fw.fa-plus
+    New Gallery
 
 -@galleries.each do |g|
   =link_to [:admin, g] do
