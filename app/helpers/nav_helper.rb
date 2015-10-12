@@ -16,11 +16,15 @@ module NavHelper
     end
   end
 
-  def nav_to(title, path)
+  def nav_to(title, path, icon = nil)
     current = current_page? path
 
     haml_tag :li do
       haml_tag :a, class: current ? 'active' : '', href: path do
+        unless icon.nil?
+          haml_tag :i, class: "fa fa-fw fa-#{icon}"
+        end
+
         haml_concat title
       end
     end

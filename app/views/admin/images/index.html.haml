@@ -1,0 +1,9 @@
+-content_for :toolbar do
+  =link_to new_admin_image_path do
+    %i.fa.fa-fw.fa-plus
+    New Image
+
+-@images.each do |g|
+  =link_to [:admin, g] do
+    %div.gallery{style: "background-image: url('#{g.image.path(:medium)}');"}
+      %div.name=g.name

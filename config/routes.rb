@@ -18,9 +18,14 @@ SimpleGallery::Application.routes.draw do
 
       resources :pages
       resources :settings
-      resources :galleries
-      resources :images
+
+      resources :galleries do
+        resources :images
+      end
+
       resources :users
+
+      get '/todo' => 'static#todo', as: :todo
     end
 
     # Static Routes

@@ -1,8 +1,9 @@
-=content_for :toolbar do
+-title @gallery.name
+-content_for :toolbar do
   =link_to edit_admin_gallery_path(@gallery) do
     %i.fa.fa-fw.fa-pencil
     Edit Gallery
-  %a{href: '#'}
+  =link_to new_admin_gallery_image_path(@gallery) do
     %i.fa.fa-fw.fa-upload
     Upload Images
   =link_to admin_gallery_path(@gallery), method: :delete, confirm: "Really delete #{@gallery.name}?" do
@@ -12,4 +13,7 @@
 %h1=@gallery.name
 =simple_format @gallery.description
 
-%p Ready for Images, cap'n.
+-@gallery.images.each do |i|
+  =link_to edit_admin_gallery_image_path(@gallery, i) do
+    %div.gallery{style: "background-image: url('#{i.image.url}');"}
+      %div.name=i.name

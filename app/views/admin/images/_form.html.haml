@@ -1,0 +1,13 @@
+=form_for [:admin, @gallery, @image], html: { multipart: true } do |f|
+  =f.hidden_field :gallery_id, value: params[:gallery_id]
+
+  =f_label f, :name
+  =f.text_field :name
+
+  =f_label f, :description
+  =f.text_area :description
+
+  =f_label f, :image
+  =f.file_field :image
+
+  =f.submit

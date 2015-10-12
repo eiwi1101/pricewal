@@ -1,16 +1,2 @@
 %h1 Admin Home
 Howdy, #{current_user.username}. I see you want to do some administrating.
-
-%h2 Pages
-%table.lr
-  %tr
-    %th Page Title
-    %th URL Slug
-    %th
-  -Page.all.each do |p|
-    %tr
-      %td=p.title
-      %td=link_to "/#{p.slug}", page_path(p)
-      %td=link_to 'edit', edit_admin_page_path(p)
-
-=link_to 'New Page', new_admin_page_path

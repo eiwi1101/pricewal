@@ -1,0 +1,11 @@
+=content_for :toolbar do
+  =link_to edit_admin_image_path(@image) do
+    %i.fa.fa-fw.fa-pencil
+    Edit Image
+  =link_to admin_image_path(@image), method: :delete, confirm: "Really delete #{@image.name}?" do
+    %i.fa.fa-fw.fa-trash
+    Delete Image
+
+%h1=@image.name
+=simple_format @image.description
+

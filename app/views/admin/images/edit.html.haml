@@ -1,0 +1,12 @@
+-content_for :toolbar do
+  =link_to admin_gallery_path(@gallery) do
+    %i.fa.fa-fw.fa-ban
+    Cancel
+  %i.spacer
+  =link_to admin_gallery_image_path(@gallery, @image), method: :delete, confirm: "Are you sure you want to delete this image?" do
+    %i.fa.fa-fw.fa-trash
+    Delete Image
+
+%h1 Edit Image
+
+=render 'form'
