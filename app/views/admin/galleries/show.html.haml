@@ -15,5 +15,5 @@
 
 -@gallery.images.each do |i|
   =link_to edit_admin_gallery_image_path(@gallery, i) do
-    %div.gallery{style: "background-image: url('#{i.image.url}');"}
+    %div.gallery{style: "background-image: url('#{image_path i.image}');"}
       %div.name=i.name
