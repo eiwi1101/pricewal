@@ -9,12 +9,17 @@
   }
 
   var visitors = {
-    labels: #{((Date.today - 6)..Date.today).to_a.collect{|t|t.strftime "%A"}.to_json},
+    labels: #{@range.to_a.to_json},
     datasets: [
       {
         fillColor:   "transparent",
+        strokeColor: "#777",
+        data:        #{@range.to_a.collect {|d| @total[:views][d] || 0}.to_json}
+      },
+      {
+        fillColor:   "transparent",
         strokeColor: "#700",
-        data:        [3, 6, 2, 5, 1, 0, 3]
+        data:        #{@range.to_a.collect {|d| @total[:sessions][d] || 0}.to_json}
       }
     ]
   }
@@ -37,4 +42,22 @@
 
   %div.col-box
     %h2 Visitors
+
+    %table
+      %tr
+        %th
+        %th Page Views
+        %th Sessions
+        %th PPS
+      %tr
+        %td Total
+        %td=@total[:views].values.sum
+        %td=@total[:sessions].values.sum
+        %td=@total[:pps].values.sum
+      %tr
+        %td Average
+        %td=@total[:views].values.sum / @total[:views].size
+        %td=@total[:sessions].values.sum / @total[:views].size
+        %td=@total[:pps].values.sum / @total[:views].size
+
     %canvas#visitors{height: 150}

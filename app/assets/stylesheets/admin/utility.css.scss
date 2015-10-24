@@ -48,8 +48,12 @@ div.two-col {
 
     h2 {
       margin-top: 0px;
-      margin-bottom: 0px;
+      margin-bottom: 10px;
       border-bottom: 1px solid #CCC;
+    }
+
+    canvas, table, p {
+      margin-top: 10px;
     }
   }
 }

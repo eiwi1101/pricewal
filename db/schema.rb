@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151008041519) do
+ActiveRecord::Schema.define(version: 20151024084637) do
 
   create_table "galleries", force: true do |t|
     t.string   "name"
@@ -30,6 +30,16 @@ ActiveRecord::Schema.define(version: 20151008041519) do
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
+  end
+
+  create_table "page_views", force: true do |t|
+    t.string   "session_id"
+    t.string   "url"
+    t.string   "controller"
+    t.string   "action"
+    t.string   "resource_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "pages", force: true do |t|
