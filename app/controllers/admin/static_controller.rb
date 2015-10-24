@@ -8,6 +8,8 @@ class StaticController < AdminController
   def notfound
     render :status => 404
   end
+  def about
+  end
 
 end
 end

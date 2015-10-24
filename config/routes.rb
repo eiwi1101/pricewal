@@ -26,6 +26,7 @@ SimpleGallery::Application.routes.draw do
       resources :users
 
       get '/todo' => 'static#todo', as: :todo
+      get '/about' => 'static#about'
       get '*page' => 'static#notfound', as: :notfound
     end
 

@@ -1,0 +1,42 @@
+%h1 Beehive Administration Panel (version #{VERSION})
+%p
+  Copyright &copy;2014-2015 William Eisert and Eisert Development, LLC.<br />
+  See <a href='http://eisertdev.com/beehive'>eisertdev.com/beehive</a> for more information.
+
+%div.two-col
+  %div.col-box
+    %h2 Version Information
+    %dl
+      %dt Software Version
+      %dd.pre=VERSION
+
+      %dt Software Revision
+      %dd.pre=HG_VERSION
+
+      %dt Production Hash
+      %dd.pre=CAP_VERSION
+
+  %div.col-box
+    %h2 Environment
+    %dl
+      %dt Server
+      %dd.pre=Socket.gethostname
+
+      %dt Host
+      %dd.pre=request.host_with_port
+
+      %dt Uptime
+      %dd.pre=uptime
+
+      %dt Platform
+      %dd.pre=RUBY_PLATFORM
+
+      %dt Envirionment
+      %dd.pre=Rails.env
+
+%h2 Support
+
+%small
+  For help, support, and general inquiries: contact <a href='mailto:support@eisertdev.com'>
+  support@eisertdev.com</a> or call <a href='tel:+13203451899'>+1&nbsp;320&#8209;345&#8209;1899</a> (Mon&ndash;Fri,
+  10:00&ndash;22:00 Central; standard and/or long distance rates may apply.)

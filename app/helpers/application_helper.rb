@@ -1,5 +1,9 @@
 module ApplicationHelper
 
+  def uptime
+    time_ago_in_words(START_TIME)
+  end
+
   def title(page_title)
     content_for(:title) { page_title }
   end

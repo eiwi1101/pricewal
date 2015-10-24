@@ -387,6 +387,20 @@ body.holygrail {
   }
 }
 
+dl { 
+  dt {
+    font-weight: bold;
+  }
+
+  dd {
+    margin-bottom: 1em;
+
+    &.pre {
+      font-family: monospace;
+    }
+  }
+}
+
 form {
   width: 100%;
 
