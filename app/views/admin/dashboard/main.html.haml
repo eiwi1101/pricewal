@@ -4,21 +4,27 @@
   var options = {
     animation: false,
     scaleShowGridLines: false,
-    pointDot: false,
+    pointDot: true,
+    bezierCurve: true,
+    datasetStrokeWidth: 3,
     responsive: true
   }
 
   var visitors = {
-    labels: #{@range.to_a.to_json},
+    labels: #{@range.to_a.enum_for(:each_with_index).collect{|d,i|i.odd? ? d.strftime("%b %-d") : ""}.to_json},
     datasets: [
       {
-        fillColor:   "transparent",
+        label: "Page Views",
+        fillColor:   "#EEE",
         strokeColor: "#777",
+        pointColor:  "#777",
         data:        #{@range.to_a.collect {|d| @total[:views][d] || 0}.to_json}
       },
       {
-        fillColor:   "transparent",
+        label: "Unique Sessions",
+        fillColor:   "#FEE",
         strokeColor: "#700",
+        pointColor:  "#700",
         data:        #{@range.to_a.collect {|d| @total[:sessions][d] || 0}.to_json}
       }
     ]
@@ -41,23 +47,21 @@
     %p No new messages.
 
   %div.col-box
-    %h2 Visitors
+    %h2 Weekly Visitors
 
-    %table
-      %tr
-        %th
-        %th Page Views
-        %th Sessions
-        %th PPS
-      %tr
-        %td Total
-        %td=@total[:views].values.sum
-        %td=@total[:sessions].values.sum
-        %td=@total[:pps].values.sum
-      %tr
-        %td Average
-        %td=@total[:views].values.sum / @total[:views].size
-        %td=@total[:sessions].values.sum / @total[:views].size
-        %td=@total[:pps].values.sum / @total[:views].size
+    %div.widgets
+      %div.widget-box{style: 'background-color: #FEE; color: #700;'}
+        %div.number
+          #{@total[:sessions].values.sum}
+          %span.supplimental
+            \/ #{@total[:sessions].values.sum / @total[:sessions].count}
+        %div.caption Unique Sessions
+
+      %div.widget-box{style: 'background-color: #EEE; color: #000;'}
+        %div.number
+          #{@total[:views].values.sum}
+          %span.supplimental
+            \/ #{@total[:views].values.sum / @total[:views].count}
+        %div.caption Page Views
 
     %canvas#visitors{height: 150}

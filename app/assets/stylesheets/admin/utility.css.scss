@@ -57,3 +57,35 @@ div.two-col {
     }
   }
 }
+
+div.widgets {
+  -webkit-column-width: 150px;
+     -moz-column-width: 150px;
+          column-width: 150px;
+  -webkit-column-gap: 15px;
+     -moz-column-gap: 15px;
+          column-gap: 15px;
+
+  div.widget-box {
+    background-color: #F77;
+    border-radius: 5px;
+    text-align: center;
+    padding: 5px;
+
+    -webkit-column-break-inside: avoid;
+              page-break-inside: avoid;
+                   break-inside: avoid;
+
+    div.number {
+      font-size: 24px;
+
+      span.supplimental {
+        font-size: 16px;
+      }
+    }
+
+    div.caption {
+      font-size: 12px;
+    }
+  }
+}
