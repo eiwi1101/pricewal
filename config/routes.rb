@@ -14,7 +14,7 @@ SimpleGallery::Application.routes.draw do
 
     # Admin Namespace
     namespace :admin do
-      root 'static#home'
+      root 'dashboard#main'
 
       resources :pages
       resources :settings

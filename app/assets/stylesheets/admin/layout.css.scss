@@ -68,30 +68,6 @@ a:hover {
   text-decoration: underline;
 }
 
-div#admin-command {
-  position: absolute;
-  left: 50%;
-  margin-left: -165px;
-  background-color: #CCCCCC;
-  width: 360px;
-  top: 60px;
-  z-index: 30;
-  box-shadow: 0 0 10px #000;
-  display: none;
-
-  input {
-    font: inherit;
-    width: 100%;
-    padding: 10px;
-    box-sizing: border-box;
-    padding-bottom: 10px;
-  }
-
-  div#command-suggest {
-    padding: 10px;
-  }
-}
-
 header {
   height: 24px;
   padding: 10px;
@@ -270,6 +246,20 @@ body.holygrail {
             }
           }
 
+          span.notifications {
+            font-size: smaller;
+            border-radius: 3px;
+            background-color: #F00;
+            color: #FFF;
+            padding: 2px;
+            width: 16px;
+            font-weight: bold;
+            display: inline-block;
+            text-align: center;
+            float: right;
+            margin-right: 15px;
+          }
+
           ul {
             margin-left: 35px;
             font-size: smaller;
@@ -315,6 +305,10 @@ body.holygrail {
 
       div#content {
         max-width: 660px;
+        padding: 15px;
+      }
+
+      div#content-wide {
         padding: 15px;
       }
 

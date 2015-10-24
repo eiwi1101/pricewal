@@ -10,6 +10,9 @@
       -nav_to 'All Pages', admin_pages_path
       -nav_to 'New Page', new_admin_page_path
 
+    -#nav_menu 'Messages', 'envelope-o', 'admin/messages', 4 do
+      -nav_to 'Inbox', admin_pages_path
+
     -nav_menu 'Galleries', 'image', 'admin/galleries' do
       -nav_to 'All Galleries', admin_galleries_path
       -Gallery.all.each do |g|

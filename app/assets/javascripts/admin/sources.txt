@@ -1,0 +1,5 @@
+https://raw.githubusercontent.com/nnnick/Chart.js/master/src/Chart.Core.js
+https://raw.githubusercontent.com/Glench/fuzzyset.js/master/lib/fuzzyset.js
+https://raw.githubusercontent.com/nnnick/Chart.js/master/src/Chart.Doughnut.js
+https://raw.githubusercontent.com/nnnick/Chart.js/master/src/Chart.Line.js
+https://raw.githubusercontent.com/nnnick/Chart.js/master/src/Chart.Bar.js
