@@ -1,5 +1,14 @@
-%h1 TODO
-%ul
-  %li Clean up routing
-  %li 404 pages proper
-  %li Ease of Use Check
+%h1 Visitors
+%table
+  %tr
+    %th Date
+    %th Url
+    %th Controller
+  -PageView.not_admin.reverse.group_by { |d| d.created_at.to_date }.each do |d, v|
+    %tr
+      %td{colspan: 3}=d
+    -v.each do |t|
+      %tr
+        %td=t.created_at.strftime("%H:%M:%S")
+        %td=t.url
+        %td=t.controller + "#" + t.action

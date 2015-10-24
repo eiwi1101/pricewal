@@ -7,7 +7,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   before_action :gnu_sir_terry_pratchett
-  before_action :log_page_view
+  after_action :log_page_view
 
 private
 
@@ -17,6 +17,8 @@ private
   end
 
   def log_page_view
+    return unless self.status == 200
+
     PageView.create({
       session_id: session.id,
       url: request.path,
