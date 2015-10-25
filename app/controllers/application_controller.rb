@@ -9,6 +9,11 @@ class ApplicationController < ActionController::Base
   before_action :gnu_sir_terry_pratchett
   after_action :log_page_view
 
+  # Kindly deal with 404s:
+  rescue_from ActionView::MissingTemplate do |e|
+    render '404', formats: :html
+  end
+
 private
 
   def gnu_sir_terry_pratchett

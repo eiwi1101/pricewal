@@ -30,6 +30,9 @@ SimpleGallery::Application.routes.draw do
       get '*page' => 'static#notfound', as: :notfound
     end
 
+    # Consume Resources
+    resources :artworks, only: [ :index, :show ], constraints: { format: /(json|html)/ }
+
     # Static Routes
     get '/md' => 'static#markdown', as: :markdown
 

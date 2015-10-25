@@ -6,6 +6,8 @@
  */
 
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,800|Open+Sans+Condensed:300);
+@import "font-awesome-sprockets";
+@import "font-awesome";
 
 // Colors
 $white: #FFFFFF;
@@ -279,6 +281,79 @@ form {
     }
 }
 
+// Relax
+
+
+div.loading,
+div#relax-box-a,
+div#relax-box-b {
+    background-color: #000;
+    color: #FFF;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 100;
+    background-position: center;
+    background-size: cover;
+}
+
+div#relax-box-a.top,
+div#relax-box-b.top {
+    z-index: 101;
+}
+
+div#relax-box-a,
+div#relax-box-b {
+    display: none;
+}
+
+div#relax-controls {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 75px;
+    text-align: center;
+    background-color: #000;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.0), rgba(0,0,0,1) 75%);
+    display: none;
+    opacity: 0.5;
+    overflow: hidden;
+    z-index: 110;
+}
+
+div#relax-controls:hover {
+    opacity: 1;
+}
+
+div#relax-controls a.fa {
+    position: absolute;
+    font-size: 25px;
+    bottom: 10px;
+    color: #CCC;
+}
+
+a#pause {
+    left: 10px;
+}
+
+a#stress {
+    right: 10px;
+}
+
+div#relax-controls h1 {
+    text-align: center;
+}
+
+div#relax-controls a:hover {
+    text-decoration: none;
+    color: #FFF;
+    cursor: pointer;
+}
+
+
 // Navigation (Main)
 
 nav {
@@ -300,6 +375,8 @@ nav {
             overflow: hidden;
 
             a {
+              display: block;
+              width: 100%;
               font-size: 64px;
               text-transform: uppercase;
               font-weight: 800;
@@ -380,8 +457,11 @@ nav {
   }
 
   nav ul li {
-    left: 0;
-    right: 0;
+
+    &:nth-child(odd) {
+      left: 0;
+      max-width: $width;
+    }
 
     &:nth-child(even) {
       margin-left: 0;

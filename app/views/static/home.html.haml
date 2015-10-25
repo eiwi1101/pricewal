@@ -1,12 +1,26 @@
 %nav
-    %ul
-        %li
-            %a{href:'#'}Link
-        %li
-            %a{href:'#'}Link
-        %li
-            %a{href:'#'}Link
-        %li
-            %a{href:'#'}Link
-        %li
-            %a{href:'#'}Hey, Listen!
+  %ul
+    %li=link_to 'Work', page_path("coming-soon")
+    %li=link_to 'About', page_path("coming-soon")
+    %li=link_to 'Contact', page_path("coming-soon")
+
+    %li
+      %a{href:'javascript:relax()'}Relax
+
+%div#relax-box-a.top
+%div#relax-box-b
+%div#relax-controls
+  %a#pause.fa.fa-fw.fa-pause
+  %h1
+    %a#relax-img-title{href:'/img.php'} Loading...
+  %a#stress.fa.fa-fw.fa-close
+
+:javascript
+  $(document).ready(function() {
+      #{((session.include?(:animate) and !params.include?(:animate)) ? '// No Animate' : session[:animate] = 'animatePage();')}
+      #{(params.include?(:relax) ? "relax();" : '// No Relax')}
+      $('#relax').click(relax);
+      $('#pause').click(pause);
+      $('#stress').click(stress);
+  });
+
