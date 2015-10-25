@@ -89,3 +89,19 @@ div.widgets {
     }
   }
 }
+
+div#foodchain {
+  div.image {
+    margin-bottom: 1em;
+    background-color: #EEE;
+    padding: 5px 10px;
+
+    div.filename {
+      font-weight: bold;
+    }
+
+    div.status {
+      text-align: right;
+    }
+  }
+}

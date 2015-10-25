@@ -13,7 +13,69 @@
 %h1=@gallery.name
 =simple_format @gallery.description
 
+%div#foodchain
+=form_for [:admin, @gallery, Image.new(gallery: @gallery)] do |f|
+  =f.hidden_field :gallery_id, value: @gallery.id
+
+  =f.label :image, 'Drag and Drop to Upload'
+  =f.file_field :image, id: "fileupload"
+
 -@gallery.images.each do |i|
   =link_to edit_admin_gallery_image_path(@gallery, i) do
     %div.gallery{style: "background-image: url('#{image_path i.image}');"}
       %div.name=i.name
+
+:javascript
+  $(function() {
+    $('#fileupload').fileupload({
+      dataType: 'json',
+
+      // Finished Callback
+      done: function(e, data) {
+        data.context.text("Finished.");
+
+        $.each(data.result.files, function(index, file) {
+          $('#flashes').append(
+            $('<div/>').addClass('notice').text(file.name + ' uploaded OK.')
+          );
+
+          $('div#content').append(
+            $('<div/>', { class: 'gallery', style: 'background-image: url(\'' + file.image_file_path + '\');' }).append(
+              $('<div/>', { class: 'name', text: file.name })
+            )
+          );
+        });
+      },
+
+      // Progress
+      progress: function(e, data) {
+        var progress = parseInt(data.loaded / data.total * 100, 10);
+        data.context.text("Uploading (" + progress + "%)...");
+      },
+
+      // Add
+      add: function(e, data) {
+        data.context =
+            $('<div/>').addClass('status').text("Starting upload...")
+
+        $('<div/>')
+          .addClass("image")
+          .append(
+            $('<div/>').addClass('filename').text(data.files[0].name)
+          )
+          .append(
+            data.context
+          )
+          .appendTo($("#foodchain"));
+
+        var jqXHR = data.submit()
+          .error   (function(r,s,e) {
+            $('#flashes').append(
+              $('<div/>').addClass('error').text(data.files[0].name + ' could not upload.')
+            );
+
+            data.context.text(e + ": " + data.result.error);
+          });
+      }
+    });
+  });

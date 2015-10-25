@@ -20,11 +20,25 @@ class ImagesController < AdminController
 
   def create
     @image = Image.new(image_params)
+
+    if @image.name.nil?
+      @image.name = File.basename(@image.attributes['image_file_name'], '.*').humanize
+    end
     
     if @image.save
-      redirect_to admin_gallery_path(params[:gallery_id]), flash: { notice: "Image created successfully." }
+      respond_to do |format|
+        format.html {
+          redirect_to admin_gallery_path(params[:gallery_id]), flash: { notice: "Image created successfully." }
+        }
+        format.json {
+          render json: { status: 'OK', files: [ @image.attributes.merge({image_file_path: @image.image.url}) ] }
+        }
+      end
     else
-      render 'new'
+      respond_to do |format|
+        format.html { render 'new' }
+        format.json { render json: { status: 'Error', error: nil } }
+      end
     end
   end
 
@@ -52,7 +66,7 @@ private
   end
 
   def image_params
-    params.require(:image).permit(:name, :description, :image, :gallery_id)
+    params.require(:image).permit(:name, :description, :image, :gallery_id, :images)
   end
 
 end
